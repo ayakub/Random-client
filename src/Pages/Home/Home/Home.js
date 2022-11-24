@@ -1,9 +1,10 @@
 import React from 'react';
+import banner from '../../../assests/banner.webp'
 
 const Home = () => {
     return (
-        <div>
-            <h3>This is home</h3>
+        <div >
+            <img src={banner} alt="" />
         </div>
     );
 };
