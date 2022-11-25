@@ -1,16 +1,28 @@
 import React from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import banner from '../../../assests/banner.webp'
 import price from '../../../assests/price.png'
 import quality from '../../../assests/quality.png'
 import trusted from '../../../assests/trusted.jpg'
 
 const Home = () => {
+    const catagoriesName = useLoaderData()
+    console.log(catagoriesName);
     return (
         <div>
             <div >
                 <img src={banner} alt="" />
             </div>
+            <h2 className='text-4xl font-semibold text-accent text-center mt-5'>Catagories</h2>
+            <div className='grid grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16'>
+                {
+                    catagoriesName.map(catagory => <Link className="btn btn-primary" to={`/catagoriesItem/${catagory._id}`}>
+                        <button key={catagory._id} >{catagory.catagory}</button>
+                    </Link>)
+                }
+            </div>
             {/* other section */}
+
             <div className='my-10'>
                 <h3 className='text-4xl font-semibold text-center text-primary my-10'>Why Choose Us?</h3>
                 <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>

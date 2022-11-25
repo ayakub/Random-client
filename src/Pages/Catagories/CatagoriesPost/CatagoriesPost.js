@@ -27,7 +27,7 @@ const CatagoriesPost = () => {
                         newPrice: data.new_price,
                         resalePrice: data.sell_price,
                         phone: data.number,
-                        sellPrice: data.use_time,
+                        used: data.use_time,
                         purchase_time: data.purchase_time,
                         catagory: data.catagory,
                         location: data.location,
@@ -49,7 +49,9 @@ const CatagoriesPost = () => {
                         .then(res => res.json())
                         .then(result => {
                             console.log(result);
-                            // toast.success(`${data.name} is added successfully`);
+                            if (result.acknowledged) {
+                                toast.success(`${data.name} is added successfully`);
+                            }
                         })
                 }
 
@@ -124,6 +126,7 @@ const CatagoriesPost = () => {
                             <select className="select select-bordered w-full max-w-xs" {...register("location", {
                                 required: 'Select one brand'
                             })}>
+                                <option>Dhaka</option>
                                 <option>Chittagong</option>
                                 <option>Rajshai</option>
                                 <option>Khulna</option>
