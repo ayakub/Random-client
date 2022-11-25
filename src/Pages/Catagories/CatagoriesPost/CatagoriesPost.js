@@ -50,7 +50,7 @@ const CatagoriesPost = () => {
                         .then(result => {
                             console.log(result);
                             if (result.acknowledged) {
-                                toast.success(`${data.name} is added successfully`);
+                                toast.success(`is added successfully`);
                             }
                         })
                 }

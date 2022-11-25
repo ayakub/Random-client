@@ -2,19 +2,59 @@ import React from 'react';
 
 const Catagory = ({ items }) => {
     console.log(items);
+    const
+        {
+            model,
+            newPrice,
+            resalePrice,
+            phone,
+            used,
+            purchase_time,
+            catagory,
+            location,
+            condition,
+            image,
+            date
+        } =
+            items;
     return (
-        <div className="card bg-base-100 shadow-xl">
-            <figure><img className='w-full' src={items.image} alt="Shoes" /></figure>
+        <div className="card bg-base-100 shadow-xl mb-10 pb-10">
+            <figure><img className=' h-64' src={image} alt="Shoes" /></figure>
             <div className="card-body">
-                <h2 className="card-title">
-                    Shoes!
-                    <div className="badge badge-secondary">NEW</div>
-                </h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div>
-                    <div className="badge badge-outline">Products</div>
+                <div className='flex justify-between'>
+                    <h2 className="card-title text-blue-600">
+                        {model}
+                    </h2>
+                    <div className=" ">Used: <span className='font-semibold'>{used}</span></div>
                 </div>
+                <div className='flex justify-between'>
+                    <h2 className=" ">
+                        Brand: <span className='font-semibold text-blue-600'>{catagory}</span>
+                    </h2>
+                    <h2>Post: <span className='font-semibold'> {date}</span></h2>
+                </div>
+                <div className='flex justify-between'>
+                    <h2 className=" ">
+                        Condition: <span className='font-semibold text-blue-600'>: {condition}</span>
+                    </h2>
+                    <h2>Resale Price: <span className='font-semibold text-red-600'> {resalePrice}</span></h2>
+                </div>
+                <div className='flex justify-between'>
+                    <h2 className=" ">
+                        Location: <span className='font-semibold text-blue-600'>: {location}</span>
+                    </h2>
+                    <h2>New Price: <span className='font-semibold text-red-600'> {newPrice}</span></h2>
+                </div>
+                <div className=''>
+                    <h2>Purchase Date: <span className='font-semibold '> {purchase_time}</span></h2>
+                    <h2 className=" ">
+                        Contact: <span className='font-semibold text-blue-600'>: {phone}</span>
+                    </h2>
+
+                </div>
+            </div>
+            <div className='flex justify-center'>
+                <label htmlFor="booking" className="btn btn-primary w-4/5">Book Now</label>
             </div>
         </div>
     );
