@@ -4,8 +4,10 @@ import { toast } from 'react-toastify';
 
 const CatagoriesPost = () => {
     const { register, handleSubmit, } = useForm();
-    const imageHostKey = process.env.REACT_APP_imgbb_key
-    console.log(imageHostKey)
+    const imageHostKey = '509aa0a2fc583b7f6c3e65417809235d';
+    const date = new Date().toLocaleDateString("de-DE")
+    console.log(date);
+
     const handleAddProduct = data => {
         console.log(data)
         const image = data.image[0];
@@ -20,31 +22,41 @@ const CatagoriesPost = () => {
             .then(imgData => {
                 if (imgData.success) {
                     console.log(imgData.data.url);
-                    // const doctor = {
-                    //     name: data.name,
-                    //     email: data.email,
-                    //     specialty: data.specialty,
-                    //     image: imgData.data.url
-                    // }
+                    const product = {
+                        model: data.name,
+                        newPrice: data.new_price,
+                        resalePrice: data.sell_price,
+                        phone: data.number,
+                        sellPrice: data.use_time,
+                        purchase_time: data.purchase_time,
+                        catagory: data.catagory,
+                        location: data.location,
+                        condition: data.condition,
+                        image: imgData.data.url,
+                        date: date,
+                    }
+                    console.log(product)
 
-                    // save doctor information to the database
-                    // fetch('https://doctors-portal-server-rust.vercel.app/doctors', {
-                    //     method: 'POST',
-                    //     headers: {
-                    //         'content-type': 'application/json',
-                    //         // authorization: `bearer ${localStorage.getItem('accessToken')}`
-                    //     },
-                    //     body: JSON.stringify(doctor)
-                    // })
-                    //     .then(res => res.json())
-                    //     .then(result => {
-                    //         console.log(result);
-                    //         toast.success(`${data.name} is added successfully`);
+                    //product data added database
 
-                    //     })
+                    fetch('http://localhost:5000/catagory', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json',
+                        },
+                        body: JSON.stringify(product)
+                    })
+                        .then(res => res.json())
+                        .then(result => {
+                            console.log(result);
+                            // toast.success(`${data.name} is added successfully`);
+                        })
                 }
+
+
             })
     }
+
 
     return (
         <div className='flex justify-center items-center mb-10' >
@@ -62,14 +74,14 @@ const CatagoriesPost = () => {
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Brand new price</span></label>
-                            <input type="number" placeholder='brand new price' {...register("new-price", {
+                            <input type="number" placeholder='brand new price' {...register("new_price", {
                                 required: "Brand new price is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Resale price</span></label>
-                            <input type="number" placeholder='resale price' {...register("sell-price", {
+                            <input type="number" placeholder='resale price' {...register("sell_price", {
                                 required: "resale is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
@@ -83,14 +95,14 @@ const CatagoriesPost = () => {
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Use Time</span></label>
-                            <input type="text" placeholder='use time' {...register("use-time", {
+                            <input type="text" placeholder='use time' {...register("use_time", {
                                 required: "Product name is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Purchase Date</span></label>
-                            <input type="date"  {...register("purchase-time", {
+                            <input type="date"  {...register("purchase_time", {
                                 required: "Product name is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
