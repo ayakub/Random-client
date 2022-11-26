@@ -11,9 +11,9 @@ const AllUser = () => {
                 )
     })
     return (
-        <div>
+        <div className='my-10'>
             <h3
-                className='texl-2xl text-primary font-semibold'>
+                className='texl-4xl text-primary font-semibold mb-5'>
                 All User
             </h3>
             <div>
