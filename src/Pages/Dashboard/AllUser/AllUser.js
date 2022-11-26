@@ -1,8 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
+import { data } from 'autoprefixer';
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AllUser = () => {
-    const { data: allusers = [], isLoading } = useQuery({
+    const { data: allusers = [], refetch, isLoading } = useQuery({
         queryKey: ['usersAll'],
         queryFn: () =>
             fetch('http://localhost:5000/usersAll')
@@ -10,6 +12,19 @@ const AllUser = () => {
                     res.json()
                 )
     })
+    const handleUpdate = id => {
+        fetch(`http://localhost:5000/usersAll/admin/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    toast.success('Addmin create successfully')
+                    refetch()
+                }
+            })
+    }
     return (
         <div className='my-10'>
             <h3
@@ -21,22 +36,24 @@ const AllUser = () => {
                     <table className="table w-full">
 
                         <thead>
-                            <tr>
-                                <th></th>
-                                <th>name</th>
+                            <tr >
                                 <th>email</th>
-                                <th>role</th>
+                                <th>Make Admin</th>
+                                <th className='hidden md:block lg:block'>Delete</th>
+
                             </tr>
                         </thead>
                         <tbody>
 
                             {
-                                allusers.map((users, i) => <tr>
-                                    <th>{i + 1}</th>
-                                    <td>{users.name}</td>
+                                allusers.map((users, i) => <tr key={users._id}>
                                     <td>{users.email}</td>
-                                    <td>{users.role}</td>
-                                </tr>)
+
+                                    <td><button onClick={() => handleUpdate(users._id)} className='btn btn-primary'>{users.role}</button></td>
+
+                                    <td><button className='btn bg-red-600 hidden md:block lg:block' >delete</button></td>
+                                </tr>
+                                )
                             }
 
                         </tbody>
