@@ -14,7 +14,7 @@ const Home = () => {
                 <img src={banner} alt="" />
             </div>
             <h2 className='text-4xl font-semibold text-accent text-center mt-5'>Catagories</h2>
-            <div className='grid grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16'>
+            <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16'>
                 {
                     catagoriesName.map(catagory => <Link className="btn btn-primary" to={`/catagoriesItem/${catagory._id}`}>
                         <button key={catagory._id} >{catagory.catagory}</button>

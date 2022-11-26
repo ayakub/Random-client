@@ -1,27 +1,31 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PrimaryButton from '../../../Componants/PrimaryButton';
 import { AuthContext } from '../../../Contex/AuthProvidor';
 
 const Login = () => {
     const { login, googleSignUp } = useContext(AuthContext)
     const googleProvidor = new GoogleAuthProvider();
+    const [loginError, setLoginError] = useState('')
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleLogin = data => {
         console.log(data);
-        // setLoginError('');
+        setLoginError('');
         login(data.email, data.password)
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                // setLoginUserEmail(data.email);
+                navigate('/')
+
             })
             .catch(error => {
                 console.log(error.message)
-                // setLoginError(error.message);
+                setLoginError(error.message)
+
             });
     }
     const handleWithGoogleSignIn = () => {
@@ -29,9 +33,11 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate('/')
             })
             .catch(error => {
                 console.log(error);
+                setLoginError(error.message)
             })
     }
     return (
@@ -59,9 +65,7 @@ const Login = () => {
                         {errors.password && <p className='text-red-600'>{errors.password?.message}</p>}
                     </div>
                     <input className='btn btn-accent w-full' value="Login" type="submit" />
-                    <div>
-                        {/* {loginError && <p className='text-red-600'>{loginError}</p>} */}
-                    </div>
+                    {loginError && <p className='text-red-600'>{loginError}</p>}
                 </form>
                 <p>New to Doctors Portal <Link className='text-blue-600' to="/signup">Create new Account</Link></p>
                 <div className="divider">OR</div>

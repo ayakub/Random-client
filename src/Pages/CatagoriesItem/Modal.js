@@ -30,6 +30,7 @@ const Modal = ({ bookItem }) => {
             .then(result => {
                 console.log(result);
                 if (result.acknowledged) {
+                    handleModal(null)
                     toast.success('Booking confirmed');
                 }
             })
@@ -102,7 +103,14 @@ const Modal = ({ bookItem }) => {
 
 
                         <div className=' w-full max-w-xs'>
-                            <input className='btn btn-primary mt-5 ' value="Submit" type="submit" />
+                            {
+                                user?.uid ?
+                                    <input className='btn btn-primary mt-5 ' value="Submit" type="submit" />
+                                    :
+                                    <div>
+                                        <p className='text-red-600'>Please login then booking</p>
+                                    </div>
+                            }
                         </div>
 
                     </form>

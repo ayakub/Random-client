@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Contex/AuthProvidor';
 
 const Catagory = ({ items }) => {
+    const { user } = useContext(AuthContext)
     // console.log(items);
     const
         {
@@ -60,7 +62,10 @@ const Catagory = ({ items }) => {
                 </div>
             </div>
             <div className='flex justify-center'>
-                <label htmlFor="booking" className="btn btn-primary w-4/5">Book Now</label>
+                {
+                    user?.email &&
+                    <label htmlFor="booking" className="btn btn-primary w-4/5">Book Now</label>
+                }
             </div>
         </div>
     );

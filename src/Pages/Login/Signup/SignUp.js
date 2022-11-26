@@ -2,6 +2,7 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, } from 'react-router-dom';
+import swal from 'sweetalert';
 import { AuthContext } from '../../../Contex/AuthProvidor';
 
 const SignUp = () => {
@@ -24,6 +25,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
+                        saveUser(data.name, data.email, data.role);
                     })
                     .catch(err => console.log(err));
             })
@@ -36,6 +38,26 @@ const SignUp = () => {
         googleSignUp(googleProvidor)
             .then(result => {
                 const user = result.user;
+                const handleUser = {
+                    name: user.displayName,
+                    email: user.email,
+                    role: 'buyer'
+                }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(handleUser)
+                })
+                    .then(res => res.json())
+                    .then(resultgoogle => {
+                        console.log(resultgoogle);
+                        if (resultgoogle.acknowledged) {
+                            swal("Good job!", "You clicked the button!", "success");
+                        }
+
+                    })
                 console.log(user)
             })
             .catch(error => {
@@ -43,6 +65,21 @@ const SignUp = () => {
             })
     }
 
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
+        console.log(user)
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+    }
 
     return (
         <div className='h-[800px] flex justify-center items-center'>
@@ -57,7 +94,7 @@ const SignUp = () => {
                         {errors.name && <p className='text-red-500'>{errors.name.message}</p>}
                     </div>
                     <label className="label"> <span className="label-text">Chose Option</span></label>
-                    <select className="select select-bordered w-full max-w-xs" {...register("user", {
+                    <select className="select select-bordered w-full max-w-xs" {...register("role", {
                         required: "Name is Required"
                     })} >
                         <option defaultChecked>buyer</option>
