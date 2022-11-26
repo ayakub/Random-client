@@ -4,6 +4,7 @@ import DashboardLayout from '../../layouts/DashboardLayout';
 import Main from '../../layouts/Main';
 import CatagoriesPost from '../../Pages/Catagories/CatagoriesPost/CatagoriesPost';
 import CatagoriesItem from '../../Pages/CatagoriesItem/CatagoriesItem';
+import AllUser from '../../Pages/Dashboard/AllUser/AllUser';
 import Error from '../../Pages/Error/Error';
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login/Login';
@@ -44,7 +45,14 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <DashboardLayout></DashboardLayout>,
         children: [
-            { path: '/dashboard/addproduct', element: <CatagoriesPost></CatagoriesPost> }
+            {
+                path: '/dashboard/addproduct',
+                element: <CatagoriesPost></CatagoriesPost>
+            },
+            {
+                path: '/dashboard/alluser',
+                element: <AllUser></AllUser>
+            }
         ]
     },
     { path: '*', element: <Error></Error> }
