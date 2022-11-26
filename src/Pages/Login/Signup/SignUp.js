@@ -2,11 +2,10 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, } from 'react-router-dom';
-import PrimaryButton from '../../../Componants/PrimaryButton';
 import { AuthContext } from '../../../Contex/AuthProvidor';
 
 const SignUp = () => {
-    const { createUser, googleSignUp } = useContext(AuthContext);
+    const { createUser, googleSignUp, updateUser } = useContext(AuthContext);
     const googleProvidor = new GoogleAuthProvider()
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -20,13 +19,13 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                // const userInfo = {
-                //     displayName: data.name
-                // }
-                // updateUser(userInfo)
-                //     .then(() => {
-                //     })
-                //     .catch(err => console.log(err));
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                    })
+                    .catch(err => console.log(err));
             })
             .catch(error => {
                 console.log(error)
@@ -81,7 +80,7 @@ const SignUp = () => {
                     <input className='btn btn-accent w-full mt-4' value="Sign Up" type="submit" />
                     {signUpError && <p className='text-red-600'>{signUpError}</p>}
                 </form>
-                <p>Already have an account <Link className='text-secondary' to="/login">Please Login</Link></p>
+                <p>Already have an account <Link className='text-blue-600' to="/login">Please Login</Link></p>
                 <div className="divider">OR</div>
                 <button
                     onClick={handleWithGoogleSignIn}

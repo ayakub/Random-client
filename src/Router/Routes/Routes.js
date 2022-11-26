@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../layouts/Main';
 import CatagoriesPost from '../../Pages/Catagories/CatagoriesPost/CatagoriesPost';
 import CatagoriesItem from '../../Pages/CatagoriesItem/CatagoriesItem';
+import Error from '../../Pages/Error/Error';
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login/Login';
 import SignUp from '../../Pages/Login/Signup/SignUp';
@@ -35,5 +36,7 @@ export const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`http://localhost:5000/catagoriesItem/${params.id}`)
             },
         ]
-    }
+
+    },
+    { path: '*', element: <Error></Error> }
 ])

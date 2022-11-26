@@ -1,9 +1,10 @@
 import React from 'react';
 
 const Catagory = ({ items }) => {
-    console.log(items);
+    // console.log(items);
     const
         {
+            seller,
             model,
             newPrice,
             resalePrice,
@@ -46,11 +47,16 @@ const Catagory = ({ items }) => {
                     <h2>New Price: <span className='font-semibold text-red-600'> {newPrice}</span></h2>
                 </div>
                 <div className=''>
+                    <h2 className=" ">
+                        Seller Name: <span className='font-semibold text-red-600'>: {seller ? seller : 'seller name not avilable'}</span>
+                    </h2>
+
                     <h2>Purchase Date: <span className='font-semibold '> {purchase_time}</span></h2>
+                </div>
+                <div>
                     <h2 className=" ">
                         Contact: <span className='font-semibold text-blue-600'>: {phone}</span>
                     </h2>
-
                 </div>
             </div>
             <div className='flex justify-center'>
