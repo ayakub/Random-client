@@ -40,7 +40,6 @@ const AllUser = () => {
                                 <th></th>
                                 <th>email</th>
                                 <th>Make Admin</th>
-                                <th className='hidden md:block lg:block'>Delete</th>
 
                             </tr>
                         </thead>
@@ -53,7 +52,6 @@ const AllUser = () => {
 
                                     <td><button onClick={() => handleUpdate(users._id)} className='btn btn-primary'>{users.role}</button></td>
 
-                                    <td><button className='btn bg-red-600 hidden md:block lg:block' >delete</button></td>
                                 </tr>
                                 )
                             }

@@ -40,13 +40,13 @@ const Catagory = ({ items }) => {
                     <h2 className=" ">
                         Condition: <span className='font-semibold text-blue-600'>: {condition}</span>
                     </h2>
-                    <h2>Resale Price: <span className='font-semibold text-red-600'> {resalePrice}</span></h2>
+                    <h2>Resale Price: <span className='font-semibold text-red-600'> ${resalePrice}</span></h2>
                 </div>
                 <div className='flex justify-between'>
                     <h2 className=" ">
                         Location: <span className='font-semibold text-blue-600'>: {location}</span>
                     </h2>
-                    <h2>New Price: <span className='font-semibold text-red-600'> {newPrice}</span></h2>
+                    <h2>New Price: <span className='font-semibold text-red-600'> ${newPrice}</span></h2>
                 </div>
                 <div className=''>
                     <h2 className=" ">

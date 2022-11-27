@@ -1,12 +1,13 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, } from 'react-router-dom';
+import { Link, Navigate, useNavigate, } from 'react-router-dom';
 import swal from 'sweetalert';
 import { AuthContext } from '../../../Contex/AuthProvidor';
 
 const SignUp = () => {
     const { createUser, googleSignUp, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate()
     const googleProvidor = new GoogleAuthProvider()
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -18,6 +19,7 @@ const SignUp = () => {
         console.log(data);
         createUser(data.email, data.password)
             .then(result => {
+                navigate('/')
                 const user = result.user;
                 console.log(user);
                 const userInfo = {
@@ -26,6 +28,7 @@ const SignUp = () => {
                 updateUser(userInfo)
                     .then(() => {
                         saveUser(data.name, data.email, data.role);
+
                     })
                     .catch(err => console.log(err));
             })
@@ -38,6 +41,8 @@ const SignUp = () => {
         googleSignUp(googleProvidor)
             .then(result => {
                 const user = result.user;
+                navigate('/')
+                swal("Register!", "successfully!", "success");
                 const handleUser = {
                     name: user.displayName,
                     email: user.email,
@@ -54,7 +59,7 @@ const SignUp = () => {
                     .then(resultgoogle => {
                         console.log(resultgoogle);
                         if (resultgoogle.acknowledged) {
-                            swal("Good job!", "You clicked the button!", "success");
+
                         }
 
                     })

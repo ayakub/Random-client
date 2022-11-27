@@ -6,7 +6,7 @@ import { AuthContext } from '../../Contex/AuthProvidor';
 
 const Modal = ({ bookItem }) => {
     const { user } = useContext(AuthContext)
-    const { model, resalePrice, catagory } = bookItem;
+    const { model, resalePrice, catagory, image } = bookItem;
     console.log(bookItem);
     const { register, handleSubmit } = useForm();
     const handleModal = data => {
@@ -15,6 +15,7 @@ const Modal = ({ bookItem }) => {
         const modalBookingItem = {
             username: data.name,
             email: data.email,
+            image: data.image,
             category: data.catagory,
             item: data.item,
             price: data.price,
@@ -63,6 +64,13 @@ const Modal = ({ bookItem }) => {
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
 
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label"> <span className="label-text">image</span></label>
+                            <input type="text" defaultValue={image} readOnly {...register("image", {
+                                required: "image is Required"
+                            })} className="input input-bordered w-full max-w-xs" />
+                        </div>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Catagory</span></label>
