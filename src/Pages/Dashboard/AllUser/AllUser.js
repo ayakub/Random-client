@@ -37,6 +37,7 @@ const AllUser = () => {
 
                         <thead>
                             <tr >
+                                <th></th>
                                 <th>email</th>
                                 <th>Make Admin</th>
                                 <th className='hidden md:block lg:block'>Delete</th>
@@ -47,6 +48,7 @@ const AllUser = () => {
 
                             {
                                 allusers.map((users, i) => <tr key={users._id}>
+                                    <td>{i + 1}</td>
                                     <td>{users.email}</td>
 
                                     <td><button onClick={() => handleUpdate(users._id)} className='btn btn-primary'>{users.role}</button></td>

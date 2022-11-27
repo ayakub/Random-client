@@ -19,7 +19,6 @@ const AllBuyer = () => {
                     <thead>
                         <tr>
                             <th></th>
-                            <th>name</th>
                             <th>email</th>
                             <th>role</th>
                         </tr>
@@ -29,7 +28,6 @@ const AllBuyer = () => {
                         {
                             allBuyers?.map((sellers, i) => <tr>
                                 <th>{i + 1}</th>
-                                <td>{sellers.name}</td>
                                 <td>{sellers.email}</td>
                                 <td>{sellers.role}</td>
                             </tr>)

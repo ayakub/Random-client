@@ -2,6 +2,8 @@ import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 import PrimaryButton from '../../../Componants/PrimaryButton';
 import { AuthContext } from '../../../Contex/AuthProvidor';
 
@@ -20,6 +22,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 navigate('/')
+                swal("Login!", "successfully!", "success");
 
             })
             .catch(error => {

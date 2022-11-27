@@ -1,14 +1,16 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 import { AuthContext } from '../../Contex/AuthProvidor';
 
 const Modal = ({ bookItem }) => {
     const { user } = useContext(AuthContext)
     const { model, resalePrice, catagory } = bookItem;
     console.log(bookItem);
-    const { register, handleSubmit, } = useForm();
+    const { register, handleSubmit } = useForm();
     const handleModal = data => {
+        handleSubmit('')
         console.log(data)
         const modalBookingItem = {
             username: data.name,
@@ -30,8 +32,8 @@ const Modal = ({ bookItem }) => {
             .then(result => {
                 console.log(result);
                 if (result.acknowledged) {
-                    handleModal(null)
-                    toast.success('Booking confirmed');
+
+                    swal("Item booked");
                 }
             })
     }

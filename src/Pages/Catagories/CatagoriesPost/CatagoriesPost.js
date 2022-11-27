@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import swal from 'sweetalert';
 import { AuthContext } from '../../../Contex/AuthProvidor';
 
 const CatagoriesPost = () => {
@@ -26,6 +27,7 @@ const CatagoriesPost = () => {
                     console.log(imgData.data.url);
                     const product = {
                         seller: data.username,
+                        seller_email: data.seller_email,
                         model: data.name,
                         newPrice: data.new_price,
                         resalePrice: data.sell_price,
@@ -53,7 +55,7 @@ const CatagoriesPost = () => {
                         .then(result => {
                             console.log(result);
                             if (result.acknowledged) {
-                                toast.success(`is added successfully`);
+                                swal("Product Added");
                             }
                         })
                 }
@@ -74,6 +76,13 @@ const CatagoriesPost = () => {
                             <label className="label"> <span className="label-text">Seller Name</span></label>
                             <input type="text" placeholder='Product Name' defaultValue={user?.displayName} {...register("username", {
                                 required: "Product name is Required"
+                            })} className="input input-bordered w-full max-w-xs" />
+                        </div>
+
+                        <div className="form-control w-full max-w-xs">
+                            <label className="label"> <span className="label-text">Seller email</span></label>
+                            <input type="text" placeholder='Product Name' defaultValue={user?.email} {...register("seller_email", {
+                                required: "Seller email is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
 
