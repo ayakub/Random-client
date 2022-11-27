@@ -27,7 +27,7 @@ const AllSeller = () => {
                     <tbody>
 
                         {
-                            allusers?.map((sellers, i) => <tr>
+                            allusers?.map((sellers, i) => <tr key={sellers._id}>
                                 <th>{i + 1}</th>
                                 <td>{sellers.email}</td>
                                 <td>{sellers.role}</td>

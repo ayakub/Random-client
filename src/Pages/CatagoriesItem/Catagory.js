@@ -64,7 +64,7 @@ const Catagory = ({ items }) => {
             <div className='flex justify-center'>
                 {
                     user?.email &&
-                    <label htmlFor="booking" className="btn btn-primary w-4/5">Book Now</label>
+                    <label htmlFor="booking" className="btn btn-primary w-3/5">Book Now</label>
                 }
             </div>
         </div>

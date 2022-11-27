@@ -27,7 +27,6 @@ const CatagoriesPost = () => {
                     console.log(imgData.data.url);
                     const product = {
                         seller: data.username,
-                        seller_email: data.seller_email,
                         model: data.name,
                         newPrice: data.new_price,
                         resalePrice: data.sell_price,
@@ -55,7 +54,7 @@ const CatagoriesPost = () => {
                         .then(result => {
                             console.log(result);
                             if (result.acknowledged) {
-                                swal("Product Added");
+                                swal("Product ");
                             }
                         })
                 }
@@ -70,115 +69,29 @@ const CatagoriesPost = () => {
             <div className='p-7'>
                 <h2 className='text-4xl text-primary font-semibold mb-5 text-center'>Add a Car</h2>
                 <form onSubmit={handleSubmit(handleAddProduct)} >
-
                     <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Seller Name</span></label>
-                            <input type="text" placeholder='Product Name' defaultValue={user?.displayName} {...register("username", {
+                            <input type="text" defaultValue={user?.displayName} readOnly placeholder='Seller Name' {...register("username", {
                                 required: "Product name is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
 
                         <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Seller email</span></label>
-                            <input type="text" placeholder='Product Name' defaultValue={user?.email} {...register("seller_email", {
-                                required: "Seller email is Required"
+                            <label className="label"> <span className="label-text">User Email</span></label>
+                            <input type="text" defaultValue={user?.email} readOnly placeholder='Product Name' {...register("email", {
+                                required: "Product name is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
 
                         <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Name</span></label>
+                            <label className="label"> <span className="label-text">Product Name</span></label>
                             <input type="text" placeholder='Product Name' {...register("name", {
                                 required: "Product name is Required"
                             })} className="input input-bordered w-full max-w-xs" />
                         </div>
 
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Brand new price</span></label>
-                            <input type="number" placeholder='brand new price' {...register("new_price", {
-                                required: "Brand new price is Required"
-                            })} className="input input-bordered w-full max-w-xs" />
-                        </div>
 
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Resale price</span></label>
-                            <input type="number" placeholder='resale price' {...register("sell_price", {
-                                required: "resale is Required"
-                            })} className="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Phone Number</span></label>
-                            <input type="number" placeholder='phone number' {...register("number", {
-                                required: "resale is Required"
-                            })} className="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Use Time</span></label>
-                            <input type="text" placeholder='use time' {...register("use_time", {
-                                required: "Product name is Required"
-                            })} className="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Purchase Date</span></label>
-                            <input type="date"  {...register("purchase_time", {
-                                required: "Product name is Required"
-                            })} className="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div>
-                            <label className="label"> <span className="label-text">Chose Catagory</span></label>
-                            <select className="select select-bordered w-full max-w-xs" {...register("catagory", {
-                                required: 'Select one brand'
-                            })}>
-                                <option defaultChecked>Tesla</option>
-                                <option>Ferari</option>
-                                <option>Range Rover</option>
-
-                            </select>
-                        </div>
-
-                        <div>
-                            <label className="label"> <span className="label-text">Your Location</span></label>
-                            <select className="select select-bordered w-full max-w-xs" {...register("location", {
-                                required: 'Select one brand'
-                            })}>
-                                <option>Dhaka</option>
-                                <option>Chittagong</option>
-                                <option>Rajshai</option>
-                                <option>Khulna</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label className="label"> <span className="label-text">Product Condition</span></label>
-                            <select className="select select-bordered w-full max-w-xs" {...register("condition", {
-                                required: 'select condition'
-                            })}>
-                                <option>Excellent</option>
-                                <option>Good</option>
-                                <option>Fair</option>
-                            </select>
-                        </div>
-
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Upload Image</span></label>
-                            <input type="file"  {...register("image", {
-                                required: "Product name is Required"
-                            })} className="input input-bordered w-full max-w-xs" />
-                        </div>
-
-                    </div>
-                    <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                        <div className="form-control w-full max-w-xs">
-                            <label className="label"> <span className="label-text">Name</span></label>
-                            <input type="text" placeholder='Product Name' {...register("name", {
-                                required: "Product name is Required"
-                            })} className="input input-bordered w-full max-w-xs" />
-                        </div>
 
                         <div className="form-control w-full max-w-xs">
                             <label className="label"> <span className="label-text">Brand new price</span></label>
