@@ -6,7 +6,7 @@ const AllBuyer = () => {
     const { data: allBuyers = [], isLoading } = useQuery({
         queryKey: ['usersAll'],
         queryFn: () =>
-            fetch('https://reused-product-sell-server.vercel.app/usersAll/buyer')
+            fetch('http://localhost:5000/usersAll/buyer')
                 .then(res =>
                     res.json()
                 )

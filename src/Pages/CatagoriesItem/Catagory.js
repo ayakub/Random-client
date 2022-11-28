@@ -1,13 +1,18 @@
-import { useQuery } from '@tanstack/react-query';
-import React, { useContext } from 'react';
+
+import { data } from 'autoprefixer';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contex/AuthProvidor';
+import { FaCheckCircle } from "react-icons/fa";
 
 const Catagory = ({ items, allusers }) => {
+    const [isverify, setIsVerify] = useState()
+
 
     const { user } = useContext(AuthContext)
     // console.log(items);
     const
         {
+            email,
             seller,
             model,
             newPrice,
@@ -22,6 +27,14 @@ const Catagory = ({ items, allusers }) => {
             date
         } =
             items;
+    useEffect(() => {
+        fetch(`http://localhost:5000/verifyuser?email=${email}`)
+            .then(res => res.json())
+            .then(data => {
+                setIsVerify(data.verify);
+                console.log(isverify.verify)
+            })
+    }, [email])
     return (
         <div className="card bg-base-100 shadow-xl mb-10 pb-10">
             <figure><img className=' h-64' src={image} alt="Shoes" /></figure>
@@ -61,10 +74,14 @@ const Catagory = ({ items, allusers }) => {
                         Contact: <span className='font-semibold text-blue-600'>: {phone}</span>
                     </h2>
                 </div>
-                <div>
-                    <h2 className=" ">
+                <div className='flex items-center '>
+                    <h2 className="mr-1">
                         Seller: <span className='font-semibold text-blue-600'>: {seller}</span>
                     </h2>
+                    {
+                        isverify === "verified" ? <span className='text-blue-600'><FaCheckCircle />
+                        </span> : ''
+                    }
                 </div>
             </div>
             <div className='flex justify-center'>

@@ -6,7 +6,7 @@ import Modal from './Modal';
 const CatagoriesItem = () => {
     const [allusers, setAlluser] = useState({})
     useEffect(() => {
-        fetch('https://reused-product-sell-server.vercel.app/usersAll')
+        fetch('http://localhost:5000/usersAll')
             .then(res => res.json())
             .then(data => setAlluser(data))
     }, [])

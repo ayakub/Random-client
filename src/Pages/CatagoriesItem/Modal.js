@@ -22,7 +22,7 @@ const Modal = ({ bookItem }) => {
             location: data.location,
             number: data.number
         }
-        fetch('https://reused-product-sell-server.vercel.app/booking', {
+        fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

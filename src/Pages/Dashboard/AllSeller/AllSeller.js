@@ -8,7 +8,7 @@ const AllSeller = () => {
     const { data: allusers = [], isLoading, refetch } = useQuery({
         queryKey: ['usersAll'],
         queryFn: () =>
-            fetch('https://reused-product-sell-server.vercel.app/usersAll/seller')
+            fetch('http://localhost:5000/usersAll/seller')
                 .then(res =>
                     res.json()
                 )
@@ -16,7 +16,7 @@ const AllSeller = () => {
     const handleDelete = id => {
         const permisson = window.confirm('are you sure ,deleted seller?')
         if (permisson) {
-            fetch(`https://reused-product-sell-server.vercel.app/usersAll/${id}`, {
+            fetch(`http://localhost:5000/usersAll/${id}`, {
                 method: 'DELETE'
             }
             )
@@ -33,7 +33,7 @@ const AllSeller = () => {
 
     }
     const handleVerify = id => {
-        fetch(`https://reused-product-sell-server.vercel.app/verify?id=${id}`, {
+        fetch(`http://localhost:5000/verify?id=${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())

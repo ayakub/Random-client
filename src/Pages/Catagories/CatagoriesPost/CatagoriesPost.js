@@ -44,7 +44,7 @@ const CatagoriesPost = () => {
 
                     //product data added database
 
-                    fetch('https://reused-product-sell-server.vercel.app/catagory', {
+                    fetch('http://localhost:5000/catagory', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -11,14 +11,14 @@ const MyProduct = () => {
     const { data: myProducts = [], isLoading, refetch } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
-            fetch(`https://reused-product-sell-server.vercel.app/addproduct?email=${user.email}`).then(res =>
+            fetch(`http://localhost:5000/addproduct?email=${user.email}`).then(res =>
                 res.json()
             )
     })
     const handdleDeleteProduct = id => {
         const permision = window.confirm('are you sure deleted product')
         if (permision) {
-            fetch(`https://reused-product-sell-server.vercel.app/myprosuct/${id}`, {
+            fetch(`http://localhost:5000/myprosuct/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
