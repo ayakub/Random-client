@@ -20,6 +20,7 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(result => {
                 navigate('/')
+                swal("signup!", "successfully!", "success");
                 const user = result.user;
                 console.log(user);
                 const userInfo = {
@@ -42,7 +43,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 navigate('/')
-                swal("Register!", "successfully!", "success");
+                swal("signup!", "successfully!", "success");
                 const handleUser = {
                     name: user.displayName,
                     email: user.email,

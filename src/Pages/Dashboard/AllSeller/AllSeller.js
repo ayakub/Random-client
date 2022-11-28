@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { data } from 'autoprefixer';
 import React from 'react';
+import swal from 'sweetalert';
 
 const AllSeller = () => {
     const { data: allusers = [], refetch } = useQuery({
@@ -18,7 +19,9 @@ const AllSeller = () => {
         )
             .then(res => res.json())
             .then(data => {
-                window.confirm('are you sure ,deleletd seller')
+                if (data.deletedCount > 0) {
+                    swal("deleted!", "success!", "success");
+                }
                 console.log(data)
                 refetch()
             })

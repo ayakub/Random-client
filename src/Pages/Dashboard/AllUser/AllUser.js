@@ -20,7 +20,7 @@ const AllUser = () => {
             .then(data => {
                 console.log(data)
                 if (data.modifiedCount > 0) {
-                    toast.success('Addmin create successfully')
+
                     refetch()
                 }
             })

@@ -28,6 +28,7 @@ const CatagoriesPost = () => {
                     const product = {
                         seller: data.username,
                         model: data.name,
+                        email: data.email,
                         newPrice: data.new_price,
                         resalePrice: data.sell_price,
                         phone: data.number,
