@@ -1,17 +1,18 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import swal from 'sweetalert';
-import PrimaryButton from '../../../Componants/PrimaryButton';
 import { AuthContext } from '../../../Contex/AuthProvidor';
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
     const { login, googleSignUp } = useContext(AuthContext)
     const googleProvidor = new GoogleAuthProvider();
     const [loginError, setLoginError] = useState('')
-    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const handleLogin = data => {
@@ -21,7 +22,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/')
+                navigate(from, { replace: true });
                 swal("Login!", "successfully!", "success");
 
             })

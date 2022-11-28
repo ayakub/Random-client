@@ -14,6 +14,7 @@ import Error from '../../Pages/Error/Error';
 import Home from '../../Pages/Home/Home/Home';
 import Login from '../../Pages/Login/Login/Login';
 import SignUp from '../../Pages/Login/Signup/SignUp';
+import PrivateRouter from '../PrivateRoute/PrivateRouter';
 
 export const router = createBrowserRouter([
     {
@@ -52,7 +53,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardLayout></DashboardLayout>,
+        element: <PrivateRouter><DashboardLayout></DashboardLayout></PrivateRouter>,
         children: [
             {
                 path: '/dashboard/addproduct',
