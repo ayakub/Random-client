@@ -28,7 +28,7 @@ const Catagory = ({ items, allusers }) => {
         } =
             items;
     useEffect(() => {
-        fetch(`http://localhost:5000/verifyuser?email=${email}`)
+        fetch(`https://reused-product-sell-server-ayakub.vercel.app/verifyuser?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setIsVerify(data.verify);

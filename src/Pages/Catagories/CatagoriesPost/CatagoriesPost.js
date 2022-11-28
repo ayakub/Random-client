@@ -44,7 +44,7 @@ const CatagoriesPost = () => {
 
                     //product data added database
 
-                    fetch('http://localhost:5000/catagory', {
+                    fetch('https://reused-product-sell-server-ayakub.vercel.app/catagory', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

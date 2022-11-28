@@ -8,7 +8,7 @@ const AllSeller = () => {
     const { data: allusers = [], isLoading, refetch } = useQuery({
         queryKey: ['usersAll'],
         queryFn: () =>
-            fetch('http://localhost:5000/usersAll/seller')
+            fetch('https://reused-product-sell-server-ayakub.vercel.app/usersAll/seller')
                 .then(res =>
                     res.json()
                 )
@@ -16,7 +16,7 @@ const AllSeller = () => {
     const handleDelete = id => {
         const permisson = window.confirm('are you sure ,deleted seller?')
         if (permisson) {
-            fetch(`http://localhost:5000/usersAll/${id}`, {
+            fetch(`https://reused-product-sell-server-ayakub.vercel.app/usersAll/${id}`, {
                 method: 'DELETE'
             }
             )
@@ -33,7 +33,7 @@ const AllSeller = () => {
 
     }
     const handleVerify = id => {
-        fetch(`http://localhost:5000/verify?id=${id}`, {
+        fetch(`https://reused-product-sell-server-ayakub.vercel.app/verify?id=${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())

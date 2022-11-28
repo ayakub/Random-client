@@ -26,7 +26,7 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/catagoryname')
+                loader: () => fetch('https://reused-product-sell-server-ayakub.vercel.app/catagoryname')
             },
             {
                 path: '/blog',
@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
             {
                 path: '/catagoriesItem/:id',
                 element: <CatagoriesItem></CatagoriesItem>,
-                loader: ({ params }) => fetch(`http://localhost:5000/catagoriesItem/${params.id}`)
+                loader: ({ params }) => fetch(`https://reused-product-sell-server-ayakub.vercel.app/catagoriesItem/${params.id}`)
             },
         ]
 

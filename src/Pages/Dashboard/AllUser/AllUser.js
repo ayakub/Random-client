@@ -8,13 +8,13 @@ const AllUser = () => {
     const { data: allusers = [], refetch, isLoading } = useQuery({
         queryKey: ['usersAll'],
         queryFn: () =>
-            fetch('http://localhost:5000/usersAll')
+            fetch('https://reused-product-sell-server-ayakub.vercel.app/usersAll')
                 .then(res =>
                     res.json()
                 )
     })
     const handleUpdate = id => {
-        fetch(`http://localhost:5000/usersAll/admin/${id}`, {
+        fetch(`https://reused-product-sell-server-ayakub.vercel.app/usersAll/admin/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())

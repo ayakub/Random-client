@@ -6,7 +6,7 @@ const AllBuyer = () => {
     const { data: allBuyers = [], isLoading } = useQuery({
         queryKey: ['usersAll'],
         queryFn: () =>
-            fetch('http://localhost:5000/usersAll/buyer')
+            fetch('https://reused-product-sell-server-ayakub.vercel.app/usersAll/buyer')
                 .then(res =>
                     res.json()
                 )
