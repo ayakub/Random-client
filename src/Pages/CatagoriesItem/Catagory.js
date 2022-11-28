@@ -1,7 +1,9 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Contex/AuthProvidor';
 
-const Catagory = ({ items }) => {
+const Catagory = ({ items, allusers }) => {
+
     const { user } = useContext(AuthContext)
     // console.log(items);
     const
@@ -49,8 +51,7 @@ const Catagory = ({ items }) => {
                     <h2>New Price: <span className='font-semibold text-red-600'> ${newPrice}</span></h2>
                 </div>
                 <div className=''>
-                    <h2 className=" ">
-                        Seller Name: <span className='font-semibold text-red-600'>: {seller ? seller : 'seller name not avilable'}</span>
+                    <h2 className="">
                     </h2>
 
                     <h2>Purchase Date: <span className='font-semibold '> {purchase_time}</span></h2>
@@ -58,6 +59,11 @@ const Catagory = ({ items }) => {
                 <div>
                     <h2 className=" ">
                         Contact: <span className='font-semibold text-blue-600'>: {phone}</span>
+                    </h2>
+                </div>
+                <div>
+                    <h2 className=" ">
+                        Seller: <span className='font-semibold text-blue-600'>: {seller}</span>
                     </h2>
                 </div>
             </div>

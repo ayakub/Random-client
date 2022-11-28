@@ -1,17 +1,48 @@
+import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import banner from '../../../assests/banner.webp'
 import price from '../../../assests/price.png'
 import quality from '../../../assests/quality.png'
 import trusted from '../../../assests/trusted.jpg'
+import Ads from './Ads';
 
 const Home = () => {
     const catagoriesName = useLoaderData()
     console.log(catagoriesName);
+
+
+    const { data: Advertisement = [], } = useQuery({
+        queryKey: ['advertisement'],
+        queryFn: () =>
+            fetch('http://localhost:5000/advertiseing?advertise=true')
+                .then(res =>
+                    res.json()
+                )
+    })
+
     return (
         <div>
             <div >
                 <img src={banner} alt="" />
+            </div>
+
+
+            <div>
+                <h3 className='text-4xl font-semibold text-primary text-center mt-10'>Advertise</h3>
+
+                <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 my-20'>
+                    {
+                        Advertisement?.map(advertise => <Ads
+                            key={advertise._id}
+                            advertise={advertise}
+
+                        >
+
+                        </Ads>)
+                    }
+                </div>
+
             </div>
             <h2 className='text-4xl font-semibold text-accent text-center mt-5'>Catagories</h2>
             <div className='grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16'>
