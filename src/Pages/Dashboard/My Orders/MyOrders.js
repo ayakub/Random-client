@@ -8,7 +8,7 @@ const MyOrders = () => {
     const { data: bookingItems = [], isLoading, refetch } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
-            fetch(`http://localhost:5000/booking?email=${user?.email}`).then(res =>
+            fetch(`https://reused-product-sell-server.vercel.app/booking?email=${user?.email}`).then(res =>
                 res.json()
             )
     })

@@ -49,7 +49,7 @@ const SignUp = () => {
                     email: user.email,
                     role: 'buyer'
                 }
-                fetch('http://localhost:5000/users', {
+                fetch('https://reused-product-sell-server.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'
@@ -74,7 +74,7 @@ const SignUp = () => {
     const saveUser = (name, email, role) => {
         const user = { name, email, role };
         console.log(user)
-        fetch('http://localhost:5000/users', {
+        fetch('https://reused-product-sell-server.vercel.app/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -18,7 +18,7 @@ const Product = ({ myProduct, handdleDeleteProduct }) => {
         } = myProduct
     const handleAdvertisment = id => {
         console.log(id)
-        fetch(`http://localhost:5000/advertiesment?id=${id}`, {
+        fetch(`https://reused-product-sell-server.vercel.app/advertiesment?id=${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
