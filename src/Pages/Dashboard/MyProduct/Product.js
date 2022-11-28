@@ -16,6 +16,16 @@ const Product = ({ myProduct, handdleDeleteProduct }) => {
             image,
             date
         } = myProduct
+    const handleAdvertisment = id => {
+        console.log(id)
+        fetch(`http://localhost:5000/advertiesment?id=${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+    }
     return (
         <div className="card bg-base-100 shadow-xl mb-10 pb-10 mt-10">
             <figure><img className=' h-64' src={image} alt="Shoes" /></figure>
@@ -58,7 +68,8 @@ const Product = ({ myProduct, handdleDeleteProduct }) => {
                 </div>
             </div>
             <div className='flex justify-around'>
-                <button className='btn btn-primary'>Advertiesment</button>
+                <button onClick={() => handleAdvertisment(myProduct._id)} className='btn btn-primary'>Advertiesment</button>
+
                 <button onClick={() => handdleDeleteProduct(myProduct._id)} className='btn bg-red-600'>delete</button>
 
             </div>

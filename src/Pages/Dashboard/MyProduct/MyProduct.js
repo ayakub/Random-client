@@ -16,17 +16,22 @@ const MyProduct = () => {
             )
     })
     const handdleDeleteProduct = id => {
-        fetch(`http://localhost:5000/myprosuct/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                window.confirm('are you sure deleted product')
-                if (data.deletedCount > 0) {
-                    swal("Product Delete!", "success!", "success");
-                    refetch()
-                }
+        const permision = window.confirm('are you sure deleted product')
+        if (permision) {
+            fetch(`http://localhost:5000/myprosuct/${id}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (data.deletedCount > 0) {
+                        swal("Product Delete!", "success!", "success");
+                        refetch()
+                    }
+                })
+
+        }
+
     }
     if (isLoading) {
         return <Loading></Loading>

@@ -14,18 +14,22 @@ const AllSeller = () => {
                 )
     })
     const handleDelete = id => {
-        fetch(`http://localhost:5000/usersAll/${id}`, {
-            method: 'DELETE'
+        const permisson = window.confirm('are you sure ,deleted seller?')
+        if (permisson) {
+            fetch(`http://localhost:5000/usersAll/${id}`, {
+                method: 'DELETE'
+            }
+            )
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        swal("deleted!", "success!", "success");
+                    }
+                    console.log(data)
+                    refetch()
+                })
         }
-        )
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    swal("deleted!", "success!", "success");
-                }
-                console.log(data)
-                refetch()
-            })
+
     }
     if (isLoading) {
         return <Loading></Loading>
@@ -42,7 +46,7 @@ const AllSeller = () => {
                             <th></th>
                             <th>name</th>
                             <th>email</th>
-                            <th>role</th>
+                            <th>verified</th>
                             <th>delete</th>
                         </tr>
                     </thead>
@@ -53,7 +57,11 @@ const AllSeller = () => {
                                 <th>{i + 1}</th>
                                 <td>{sellers.name}</td>
                                 <td>{sellers.email}</td>
-                                <td>{sellers.role}</td>
+                                {/* verified button*/}
+                                <td><button>{sellers.verified ? sellers.verified :
+                                    "no verified"
+                                }</button></td>
+
                                 <td><button onClick={() => handleDelete(sellers._id)} className="btn bg-red-600">delete</button></td>
                             </tr>)
                         }
