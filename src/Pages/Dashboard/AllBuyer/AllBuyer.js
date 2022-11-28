@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
+import Loading from '../AllUser/Shared/Loading/Loading';
 
 const AllBuyer = () => {
     const { data: allBuyers = [], isLoading } = useQuery({
@@ -10,6 +11,9 @@ const AllBuyer = () => {
                     res.json()
                 )
     })
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div className='my-10'>
             <h2 className='text-4xl font-semibold mb-5 text-primary'>All seller</h2>

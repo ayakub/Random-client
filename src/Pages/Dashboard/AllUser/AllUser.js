@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { data } from 'autoprefixer';
 import React from 'react';
 import { toast } from 'react-toastify';
+import Loading from './Shared/Loading/Loading';
 
 const AllUser = () => {
     const { data: allusers = [], refetch, isLoading } = useQuery({
@@ -24,6 +25,9 @@ const AllUser = () => {
                     refetch()
                 }
             })
+    }
+    if (isLoading) {
+        return <Loading></Loading>
     }
     return (
         <div className='my-10'>

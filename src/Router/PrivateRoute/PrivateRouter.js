@@ -7,15 +7,17 @@ const PrivateRouter = ({ children }) => {
     const location = useLocation();
     const { user, loading } = useContext(AuthContext)
     if (loading) {
-        return <Circles
-            height="80"
-            width="80"
-            color="#4fa94d"
-            ariaLabel="circles-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-        />
+        return <div className='flex justify-center'>
+            <Circles
+                height="80"
+                width="80"
+                color="#4fa94d"
+                ariaLabel="circles-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+            />
+        </div>
     }
 
     if (user) {

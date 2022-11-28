@@ -2,9 +2,10 @@ import { useQuery } from '@tanstack/react-query';
 import { data } from 'autoprefixer';
 import React from 'react';
 import swal from 'sweetalert';
+import Loading from '../AllUser/Shared/Loading/Loading';
 
 const AllSeller = () => {
-    const { data: allusers = [], refetch } = useQuery({
+    const { data: allusers = [], isLoading, refetch } = useQuery({
         queryKey: ['usersAll'],
         queryFn: () =>
             fetch('http://localhost:5000/usersAll/seller')
@@ -25,6 +26,9 @@ const AllSeller = () => {
                 console.log(data)
                 refetch()
             })
+    }
+    if (isLoading) {
+        return <Loading></Loading>
     }
     return (
         <div className='my-10'>

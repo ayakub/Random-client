@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const useAdmin = email => {
+const useBuyer = email => {
     const [isBuyer, setIsBuyer] = useState(false);
     const [isBuyerLoading, setIsBuyerLoading] = useState(true);
     useEffect(() => {
@@ -17,4 +17,4 @@ const useAdmin = email => {
     return [isBuyer, isBuyerLoading]
 }
 
-export default useAdmin;
+export default useBuyer;

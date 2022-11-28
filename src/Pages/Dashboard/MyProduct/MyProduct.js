@@ -3,11 +3,12 @@ import { handler } from 'daisyui';
 import React, { useContext } from 'react';
 import swal from 'sweetalert';
 import { AuthContext } from '../../../Contex/AuthProvidor';
+import Loading from '../AllUser/Shared/Loading/Loading';
 import Product from './Product';
 
 const MyProduct = () => {
     const { user } = useContext(AuthContext)
-    const { data: myProducts = [], refetch } = useQuery({
+    const { data: myProducts = [], isLoading, refetch } = useQuery({
         queryKey: ['repoData'],
         queryFn: () =>
             fetch(`http://localhost:5000/addproduct?email=${user.email}`).then(res =>
@@ -23,8 +24,12 @@ const MyProduct = () => {
                 window.confirm('are you sure deleted product')
                 if (data.deletedCount > 0) {
                     swal("Product Delete!", "success!", "success");
+                    refetch()
                 }
             })
+    }
+    if (isLoading) {
+        return <Loading></Loading>
     }
     return (
         <div>
