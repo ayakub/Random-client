@@ -1,0 +1,29 @@
+.background-color {
+    background-color: rgb(35, 34, 34);
+}
+
+.card-color{
+    background-color: #191717;
+}
+
+.button-design{
+background-color: #d16527;
+
+}
+.button-design-span{
+margin-top: -5px;
+}
+.chose-us:hover {
+width: 400px;
+height: 400px;
+}
+.my-element {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Set the transform for the element on hover */
+  .chose-us:hover{
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+  }
