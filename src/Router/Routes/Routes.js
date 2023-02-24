@@ -68,33 +68,33 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/addproduct",
         element: (
-          <SellerRoute>
-            <CatagoriesPost></CatagoriesPost>
-          </SellerRoute>
+          //<SellerRoute>
+          <CatagoriesPost></CatagoriesPost>
+          //</SellerRoute>
         ),
       },
       {
         path: "/dashboard/alluser",
         element: (
-          <AdminRoute>
-            <AllUser></AllUser>
-          </AdminRoute>
+          //<AdminRoute>
+          <AllUser></AllUser>
+          //</AdminRoute>
         ),
       },
       {
         path: "/dashboard/allseller",
         element: (
-          <AdminRoute>
-            <AllSeller></AllSeller>
-          </AdminRoute>
+          //<AdminRoute>
+          <AllSeller></AllSeller>
+          //</AdminRoute>
         ),
       },
       {
         path: "/dashboard/allbuyer",
         element: (
-          <AdminRoute>
-            <AllBuyer></AllBuyer>
-          </AdminRoute>
+          //<AdminRoute>
+          <AllBuyer></AllBuyer>
+          //</AdminRoute>
         ),
       },
       {
@@ -104,9 +104,9 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/myproduct",
         element: (
-          <SellerRoute>
-            <MyProduct></MyProduct>
-          </SellerRoute>
+          // <SellerRoute>
+          <MyProduct></MyProduct>
+          // </SellerRoute>
         ),
       },
     ],

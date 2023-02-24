@@ -82,7 +82,7 @@ const Ads = ({ advertise }) => {
             <button className="btn btn-sm btn-primary inline text-ali">
               <span className="">Add to Whislists</span>
             </button>
-            <label htmlFor="booking" className="btn btn-sm btn-primary ">
+            <label htmlFor="my-modal-4" className="btn btn-sm btn-primary ">
               Booking Now
             </label>
           </div>

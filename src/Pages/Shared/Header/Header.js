@@ -68,7 +68,7 @@ const Header = () => {
           <span className="flex items-center">
             <img
               className="bg-white"
-              style={{ width: "120px" }}
+              style={{ width: "100px" }}
               src={logo}
               alt=""
             />

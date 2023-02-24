@@ -15,7 +15,7 @@ const ChoseUS = () => {
           <div className="shadow-2xl p-8 card-color rounded-lg chose-us ">
             <div className="avatar flex justify-center">
               <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={price} alt="" />
+                <img src={quality} alt="" />
               </div>
             </div>
             <p className="text-lg mt-5">
@@ -27,13 +27,13 @@ const ChoseUS = () => {
           </div>
         </div>
         <div>
-          <div className=" p-8 card-color rounded-lg chose-us ">
+          <div className="shadow-2xl p-8 card-color rounded-lg chose-us ">
             <div className="avatar flex justify-center">
               <div className="w-32 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={quality} alt="" />
+                <img src={price} alt="" />
               </div>
             </div>
-            <p className="mt-5">
+            <p className="text-lg mt-5">
               When starting a company, most entrepreneurs focus their creative
               energy on developing an idea and turning it into a sellable
               product. But before you can begin selling any product or

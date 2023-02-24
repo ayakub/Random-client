@@ -39,7 +39,7 @@ const Home = () => {
         </div>
         <div></div>
       </div>
-      <h2 className="text-4xl font-semibold text-accent text-center mt-5">
+      <h2 className="text-4xl font-semibold text-primary text-center mt-5">
         Catagories
       </h2>
       <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 sm:mx-5 md:mx-20">
@@ -55,6 +55,24 @@ const Home = () => {
       {/* other section */}
 
       <ChoseUS></ChoseUS>
+
+      <label htmlFor="my-modal-4" className="btn">
+        open modal
+      </label>
+
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+      <label htmlFor="my-modal-4" className="modal cursor-pointer">
+        <label className="modal-box relative" htmlFor="">
+          <h3 className="text-lg font-bold">
+            Congratulations random Internet user!
+          </h3>
+          <p className="py-4">
+            You've been selected for a chance to get one year of subscription to
+            use Wikipedia for free!
+          </p>
+        </label>
+      </label>
     </div>
   );
 };

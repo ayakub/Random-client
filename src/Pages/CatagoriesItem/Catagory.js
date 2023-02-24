@@ -103,11 +103,12 @@ const Catagory = ({ items, allusers }) => {
         </div>
       </div>
       <div className="flex justify-center">
-        {user?.email && (
-          <label htmlFor="booking" className="btn btn-primary w-3/5">
-            Book Now
-          </label>
-        )}
+        {/* {user?.email && ( */}
+        <label htmlFor="bookingHome" className="btn btn-primary w-3/5">
+          Book Now
+        </label>
+
+        {/* )} */}
       </div>
     </div>
   );
