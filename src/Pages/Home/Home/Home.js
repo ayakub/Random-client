@@ -11,6 +11,8 @@ import Carousel from "./Carousel";
 import ChoseUS from "./ChoseUS";
 import OurService from "./OurService";
 import Review from "./Review";
+import HappyClients from "./HappyClients";
+import Contact from "./Contact";
 
 const Home = () => {
   const catagoriesName = useLoaderData();
@@ -58,6 +60,8 @@ const Home = () => {
       <OurService></OurService>
       <ChoseUS></ChoseUS>
       <Review></Review>
+      <Contact></Contact>
+      {/* <HappyClients></HappyClients> */}
 
       {/* Put this part before </body> tag */}
     </div>

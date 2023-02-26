@@ -8,7 +8,6 @@
 
 .button-design{
 background-color: #d16527;
-
 }
 .button-design-span{
 margin-top: -5px;
@@ -29,6 +28,9 @@ height: 400px;
 
 .service-card:hover {
 border-top: 5px solid #d16527;
+}
+.review-star {
+  color: gold;
 }
   
 
@@ -53,3 +55,11 @@ border-top: 5px solid #d16527;
   }
 }
 
+/* revielist */
+
+.review-card:hover {
+
+    transform: scale(1.05);
+    border-top: 3px solid #d16527;
+  
+}
