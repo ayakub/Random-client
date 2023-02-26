@@ -9,6 +9,8 @@ import "./cardBackground.css";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import Carousel from "./Carousel";
 import ChoseUS from "./ChoseUS";
+import OurService from "./OurService";
+import Review from "./Review";
 
 const Home = () => {
   const catagoriesName = useLoaderData();
@@ -25,7 +27,7 @@ const Home = () => {
     return <Loading />;
   }
   return (
-    <div className="background-color">
+    <div className="background-color ">
       <Carousel />
       <div>
         <h3 className="text-4xl font-semibold text-primary text-center mt-10">
@@ -42,37 +44,22 @@ const Home = () => {
       <h2 className="text-4xl font-semibold text-primary text-center mt-5">
         Catagories
       </h2>
-      <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 sm:mx-5 md:mx-20">
+      <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-16 sm:mx-5 md:mx-20">
         {catagoriesName.map((catagory) => (
           <Link
             className="btn btn-primary"
             to={`/catagoriesItem/${catagory._id}`}
           >
-            <button key={catagory._id}>{catagory.catagory}</button>
+            <button key={catagory._id}>{}</button>
           </Link>
         ))}
       </div>
       {/* other section */}
-
+      <OurService></OurService>
       <ChoseUS></ChoseUS>
-
-      <label htmlFor="my-modal-4" className="btn">
-        open modal
-      </label>
+      <Review></Review>
 
       {/* Put this part before </body> tag */}
-      <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-      <label htmlFor="my-modal-4" className="modal cursor-pointer">
-        <label className="modal-box relative" htmlFor="">
-          <h3 className="text-lg font-bold">
-            Congratulations random Internet user!
-          </h3>
-          <p className="py-4">
-            You've been selected for a chance to get one year of subscription to
-            use Wikipedia for free!
-          </p>
-        </label>
-      </label>
     </div>
   );
 };

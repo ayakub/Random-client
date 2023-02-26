@@ -33,7 +33,7 @@ const Ads = ({ advertise }) => {
       });
   }, []);
   return (
-    <div className="card-color py-4 mx-5 my-5 rounded-lg">
+    <div className="card-color py-4 mx-5 my-5 rounded-lg " data-aos="fade-up">
       <p
         className="ml-10 mb-2 text-primary 
       text-lg font-semibold"
@@ -82,7 +82,7 @@ const Ads = ({ advertise }) => {
             <button className="btn btn-sm btn-primary inline text-ali">
               <span className="">Add to Whislists</span>
             </button>
-            <label htmlFor="my-modal-4" className="btn btn-sm btn-primary ">
+            <label htmlFor="booking" className="btn btn-sm btn-primary ">
               Booking Now
             </label>
           </div>

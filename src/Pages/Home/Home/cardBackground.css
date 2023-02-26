@@ -1,5 +1,5 @@
 .background-color {
-    background-color: rgb(35, 34, 34);
+    background-color: rgb(32, 31, 31);
 }
 
 .card-color{
@@ -23,7 +23,33 @@ height: 400px;
   }
   
   /* Set the transform for the element on hover */
-  .chose-us:hover{
-    transform: scale(1.1);
-    transition: transform 0.2s ease-in-out;
+  
+
+
+
+.service-card:hover {
+border-top: 5px solid #d16527;
+}
+  
+
+.chose-us:hover {
+  position: relative;
+  height: 100%;
+  animation: skew 1s ease-in-out infinite alternate;
+}
+
+
+
+
+
+
+
+@keyframes skew {
+  from {
+    transform: skew(0deg);
   }
+  to {
+    transform: skew(5deg);
+  }
+}
+

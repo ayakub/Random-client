@@ -65,7 +65,11 @@ function Carousel() {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="absolute inset-0 lg:grid flex flex-col-reverse lg:grid-cols-2  items-center justify-center -sm:mb-10 md:mb-0">
+            <div
+              className="absolute inset-0 lg:grid flex flex-col-reverse lg:grid-cols-2  items-center justify-center -sm:mb-10 md:mb-0"
+              data-aos="fade-up"
+              data-aos-duration="3000"
+            >
               {/* Text */}
               <div className="w-5/5 lg:ml-16  p-8 text-white">
                 <h1 className="text-5xl font-bold mb-2">{slide.text}</h1>
