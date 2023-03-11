@@ -11,8 +11,8 @@ import {
 
 const Contact = () => {
   return (
-    <div className="py-5 text-primary  mt-5 ">
-      <h2 className="text-4xl font-semibold text-primary text-center sm:mx-7 lg:mx-20">
+    <div className="py-5 text-primary  mt-5 sm:mx-7 lg:mx-20">
+      <h2 className="text-4xl font-semibold text-primary text-center ">
         Contact Me
       </h2>
       <div className="mx-5 md:mx-0 mt-7  grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center sm:justify-center ">

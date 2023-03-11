@@ -76,7 +76,9 @@ function Carousel() {
                 <h1 className="text-5xl font-bold mb-2">{slide.text2}</h1>
                 <h1 className="text-5xl font-bold mb-6">{slide.text3}</h1>
                 <h1 className=" mb-6">{slide.text4}</h1>
-                <button className="bg-primary px-7 py-2 ">SHOW OFFER</button>
+                <a href="#ads">
+                  <button className="bg-primary px-7 py-2 ">SHOW OFFER</button>
+                </a>
               </div>
 
               {/* Image */}
