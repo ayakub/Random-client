@@ -13,6 +13,7 @@ import OurService from "./OurService";
 import Review from "./Review";
 import HappyClients from "./HappyClients";
 import Contact from "./Contact";
+import WeAreClients from "./WeAreClients";
 
 const Home = () => {
   const catagoriesName = useLoaderData();
@@ -63,6 +64,14 @@ const Home = () => {
       {/* other section */}
       <OurService></OurService>
       <ChoseUS></ChoseUS>
+      <div className="sm:mx-5 md:mx-20">
+        <div className="mb-10 ">
+          <h3 className="text-4xl font-semibold text-primary text-center mt-5">
+            WE ARE CLIENTS OF
+          </h3>
+        </div>
+        <WeAreClients></WeAreClients>
+      </div>
       <Review></Review>
       <Contact></Contact>
       {/* <HappyClients></HappyClients> */}
