@@ -4,10 +4,9 @@ import { toast } from "react-toastify";
 import swal from "sweetalert";
 import { AuthContext } from "../../Contex/AuthProvidor";
 
-const Modal = ({ bookItem }) => {
-  const { user } = useContext(AuthContext);
-  const { model, resalePrice, catagory, image } = bookItem;
-  console.log(bookItem);
+const Modal = () => {
+  const { user, modalData } = useContext(AuthContext);
+  const { model, resalePrice, catagory, image } = modalData;
   const { register, handleSubmit } = useForm();
   const handleModal = (data) => {
     handleSubmit("");
@@ -121,7 +120,7 @@ const Modal = ({ bookItem }) => {
               </label>
               <input
                 type="text"
-                defaultValue={model}
+                placeholder={model}
                 readOnly
                 {...register("item", {
                   required: "Name is Required",

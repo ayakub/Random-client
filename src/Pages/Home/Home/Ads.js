@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./cardBackground.css";
 import { FaCheckCircle } from "react-icons/fa";
 import { BiBookmarkHeart, BiHeart } from "react-icons/bi";
+import { AuthContext } from "../../../Contex/AuthProvidor";
 
 const Ads = ({ advertise }) => {
   const [isverify, setIsVerify] = useState("");
+  const { setModalData } = useContext(AuthContext);
   console.log(advertise);
   const {
     seller,
@@ -82,8 +84,12 @@ const Ads = ({ advertise }) => {
             <button className="btn btn-sm btn-primary inline text-ali">
               <span className="">Add to Whislists</span>
             </button>
-            <label htmlFor="booking" className="btn btn-sm btn-primary ">
-              Booking Now
+            <label
+              onClick={() => setModalData(advertise)}
+              htmlFor="booking"
+              className="btn btn-sm btn-primary"
+            >
+              Book Now
             </label>
           </div>
         </div>

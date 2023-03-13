@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Contex/AuthProvidor";
 import Catagory from "./Catagory";
 import Modal from "./Modal";
 
 const CatagoriesItem = () => {
   const [allusers, setAlluser] = useState({});
+  const { modalData } = useContext(AuthContext);
   useEffect(() => {
     fetch("https://reused-product-sell-server-ayakub.vercel.app/usersAll")
       .then((res) => res.json())
@@ -22,11 +24,7 @@ const CatagoriesItem = () => {
           ></Catagory>
         ))}
       </div>
-      <div>
-        {catagoryitems?.map((bookItem) => (
-          <Modal key={bookItem._id} bookItem={bookItem}></Modal>
-        ))}
-      </div>
+      <div>{modalData && <Modal></Modal>}</div>
     </div>
   );
 };

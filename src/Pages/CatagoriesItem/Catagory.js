@@ -6,7 +6,7 @@ import { FaCheckCircle } from "react-icons/fa";
 const Catagory = ({ items, allusers }) => {
   const [isverify, setIsVerify] = useState();
 
-  const { user } = useContext(AuthContext);
+  const { user, setModalData } = useContext(AuthContext);
   // console.log(items);
   const {
     email,
@@ -104,7 +104,11 @@ const Catagory = ({ items, allusers }) => {
       </div>
       <div className="flex justify-center">
         {/* {user?.email && ( */}
-        <label htmlFor="booking" className="btn btn-primary w-3/5">
+        <label
+          onClick={() => setModalData(items)}
+          htmlFor="booking"
+          className="btn btn-primary w-3/5"
+        >
           Book Now
         </label>
 
