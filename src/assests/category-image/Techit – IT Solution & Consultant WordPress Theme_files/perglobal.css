@@ -1,0 +1,163 @@
+/*
+Theme Name: techit
+*/
+
+
+.coSecvice{
+    position: relative;
+    background: url(../images/it/sbg.png) no-repeat center bottom;
+    padding-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.coAbout{
+    padding: 94px 0 140px;
+}
+.ab_slide{
+    position: relative;
+    margin-right: 30px;
+    width: auto;
+}
+.ab_img{
+    position: relative;
+    padding-left: 28px;
+}
+.ab_img img{
+    width: 100%;
+    height: auto;
+}
+
+
+/* about slider */
+
+.images_area {
+    position: relative;
+}
+.singleAbSlide {
+    position: absolute;
+    right: 127px;
+	bottom: -76px;
+    left: -15px;
+}
+.ab_videoArea span{
+	display:none;
+}
+.ab_videoArea{
+    position: relative;
+	    background:#0c3eb9;
+    padding: 44px 30px 40px;
+    border-radius: 5px;
+}
+.ab_videoArea h3{
+    font-size: 22px;
+    line-height: 32px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.ab_videoArea p{
+    color: #fff;
+    margin-bottom: 13px;
+}
+.ab_videoArea img{
+    width: 153px;
+    height: 73px;
+}
+.ab_videoArea a{}
+.ab_videoArea i{
+    position: relative;
+    float: right;
+	left: -10px;
+    width: 52px;
+    height: 52px;
+    line-height: 52px;
+    border-radius: 50%;
+    background: #fff;
+    color: #4e00d2;
+    text-align: center;
+    z-index: 1;
+    font-size: 23px;
+}
+.ab_videoArea i::after {
+    width: 68px;
+    height: 68px;
+    left: -8px;
+    top: -8px;
+    background: rgba(255, 255, 255, .73);
+    position: absolute;
+    content: '';
+    z-index: -1;
+    border-radius: 50%;
+    animation-fill-mode: both;
+    animation: blinker 1.5s ease-in-out infinite;
+    -webkit-animation: blinker 1.5s ease-in-out infinite;
+    -moz-animation: blinker 1.5s ease-in-out infinite;
+}
+@keyframes blinker {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+
+
+
+
+/* witr_single_call */
+.witr_single_call{
+
+}
+.witr_single_call h3 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.witr_single_call p{
+    color: #333;
+    margin: 0;
+}
+.witr_single_call a{
+	display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    padding: 15px 36px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    margin-top: 35px;
+}
+.witr_single_call a.rightbtn{
+    margin-top: 20px;
+}
+
+.witr_single_call a:hover{
+    color: #0c3eb9;
+    background: #fff;
+}
+
+/* new css */
+.witr_single_box_p h3{
+    padding: 21px 25px 18px;
+    background: #fff;
+}
+
+
+
+
+
+

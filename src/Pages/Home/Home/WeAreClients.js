@@ -1,14 +1,15 @@
 import React from "react";
 import Marquee from "react-fast-marquee";
 import bmw from "../../../assests/client logo/bmw.png";
-import toyota from "../../../assests/client logo/toyota.jpg";
-import hundai from "../../../assests/client logo/hundai.jpg";
+import toyota from "../../../assests/client logo/toyota.png";
+import hundai from "../../../assests/client logo/hundai.png";
 import mitshubishi from "../../../assests/client logo/mitsshibishi.png";
 import audi from "../../../assests/client logo/audi.png";
 import suzuki from "../../../assests/client logo/suzuki.png";
-import tesla from "../../../assests/client logo/teska.jpg";
+import tesla from "../../../assests/client logo/teska.png";
 import ferrari from "../../../assests/client logo/ferraei.png";
-import rangerover from "../../../assests/client logo/rangerover.jpg";
+import rangerover from "../../../assests/client logo/rangerover.png";
+import "./cardBackground.css";
 
 const WeAreClients = () => {
   const clientsLogo = [
@@ -53,12 +54,14 @@ const WeAreClients = () => {
     <Marquee>
       <div className="flex flex-row">
         {clientsLogo?.map((logo) => (
-          <img
-            className="mx-5"
-            style={{ width: "250px" }}
-            src={logo?.image}
-            alt=""
-          />
+          <div className="flex items-center card-color p-5 shadow-xl mx-2 ">
+            <img
+              className=""
+              style={{ width: "150px" }}
+              src={logo?.image}
+              alt=""
+            />
+          </div>
         ))}
       </div>
     </Marquee>

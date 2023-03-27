@@ -1,4 +1,3 @@
-import { data } from "autoprefixer";
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Contex/AuthProvidor";
 import { FaCheckCircle } from "react-icons/fa";
@@ -6,7 +5,7 @@ import { FaCheckCircle } from "react-icons/fa";
 const Catagory = ({ items, allusers }) => {
   const [isverify, setIsVerify] = useState();
 
-  const { user, setModalData } = useContext(AuthContext);
+  const { setModalData } = useContext(AuthContext);
   // console.log(items);
   const {
     email,
@@ -34,85 +33,64 @@ const Catagory = ({ items, allusers }) => {
       });
   }, []);
   return (
-    <div className="card bg-base-100 shadow-xl mb-10 pb-10">
-      <figure>
-        <img className=" h-64" src={image} alt="Shoes" />
-      </figure>
-      <div className="card-body">
-        <div className="flex justify-between">
-          <h2 className="card-title text-blue-600">{model}</h2>
-          <div className=" ">
-            Used: <span className="font-semibold">{used}</span>
+    <div className="card-color py-4 mx-5 my-5 rounded-lg ">
+      <p
+        className="ml-10 mb-2 text-primary 
+      text-lg font-semibold"
+      >
+        Avilable
+      </p>
+      <div className=" md:flex lg:justify-between md:justify-evenly md:ml-10 sm:ml-0 card-background text-white">
+        <div className="sm:mx-2 md:mx-0">
+          <img
+            className="rounded-lg md:w-72 sm:w-full h-44"
+            src={image}
+            alt=""
+          />
+        </div>
+
+        <div className=" mx-2 ">
+          <div className="">
+            <p className="mb-2 font-semibold">Model: {model}</p>
+          </div>
+          <div className="grid grid-cols-2 sm:gap-0 md:gap-4 lg:gap-4">
+            <p className="mb-2 font-semibold">Sale Price: {resalePrice}</p>
+            <p className="mb-2 font-semibold text-red-600">
+              New Price: {newPrice}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-4">
+            <p className="mb-2 font-semibold">Post: {date}</p>
+            <p className="mb-2 font-semibold">Used: {used}</p>
+          </div>
+          <p className="mb-2 font-semibold">Purchase Date: {purchase_time}</p>
+          <div className="flex items-center mb-2 font-semibold ">
+            <h2 className="mr-1">
+              Seller:{" "}
+              <span className="font-semibold text-blue-600">: {seller}</span>
+            </h2>
+            {isverify === "verified" ? (
+              <span className="text-blue-600">
+                <FaCheckCircle />
+              </span>
+            ) : (
+              ""
+            )}
+          </div>
+          <div className="grid grid-cols-2 gap-2 text-lg font-semibold">
+            <button className="btn btn-sm btn-primary inline text-ali">
+              <span className="">Add to Whislists</span>
+            </button>
+            <label
+              onClick={() => setModalData(items)}
+              htmlFor="booking"
+              className="btn btn-sm btn-primary"
+            >
+              Book Now
+            </label>
           </div>
         </div>
-        <div className="flex justify-between">
-          <h2 className=" ">
-            Brand:{" "}
-            <span className="font-semibold text-blue-600">{catagory}</span>
-          </h2>
-          <h2>
-            Post: <span className="font-semibold"> {date}</span>
-          </h2>
-        </div>
-        <div className="flex justify-between">
-          <h2 className=" ">
-            Condition:{" "}
-            <span className="font-semibold text-blue-600">: {condition}</span>
-          </h2>
-          <h2>
-            Resale Price:{" "}
-            <span className="font-semibold text-red-600"> ${resalePrice}</span>
-          </h2>
-        </div>
-        <div className="flex justify-between">
-          <h2 className=" ">
-            Location:{" "}
-            <span className="font-semibold text-blue-600">: {location}</span>
-          </h2>
-          <h2>
-            New Price:{" "}
-            <span className="font-semibold text-red-600"> ${newPrice}</span>
-          </h2>
-        </div>
-        <div className="">
-          <h2 className=""></h2>
-
-          <h2>
-            Purchase Date:{" "}
-            <span className="font-semibold "> {purchase_time}</span>
-          </h2>
-        </div>
-        <div>
-          <h2 className=" ">
-            Contact:{" "}
-            <span className="font-semibold text-blue-600">: {phone}</span>
-          </h2>
-        </div>
-        <div className="flex items-center ">
-          <h2 className="mr-1">
-            Seller:{" "}
-            <span className="font-semibold text-blue-600">: {seller}</span>
-          </h2>
-          {isverify === "verified" ? (
-            <span className="text-blue-600">
-              <FaCheckCircle />
-            </span>
-          ) : (
-            ""
-          )}
-        </div>
-      </div>
-      <div className="flex justify-center">
-        {/* {user?.email && ( */}
-        <label
-          onClick={() => setModalData(items)}
-          htmlFor="booking"
-          className="btn btn-primary w-3/5"
-        >
-          Book Now
-        </label>
-
-        {/* )} */}
       </div>
     </div>
   );

@@ -1,0 +1,343 @@
+@font-face {
+    font-family: 'aprova';
+    src:  url('../fonts/aprova0698.eot?ef1ywa');
+    src:  url('../fonts/aprova0698.eot?ef1ywa#iefix') format('embedded-opentype'),
+        url('../fonts/aprova0698.ttf?ef1ywa') format('truetype'),
+        url('../fonts/aprova0698.woff?ef1ywa') format('woff'),
+        url('../fonts/aprova0698.svg?ef1ywa#aprova') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="aprova-"], [class*=" aprova-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'aprova' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.aprova-lover:before {
+    content: "\f100";		
+}
+.aprova-conversation:before {
+    content: "\f101";		
+}
+.aprova-headphones:before {
+    content: "\f102";		
+}
+.aprova-share:before {
+    content: "\f103";		
+}
+.aprova-google:before {
+    content: "\f104";		
+}
+.aprova-synchronize:before {
+    content: "\f105";		
+}
+.aprova-protection:before {
+    content: "\f106";		
+}
+.aprova-light-bulb:before {
+    content: "\f107";		
+}
+.aprova-hosting:before {
+    content: "\f108";		
+}
+.aprova-consulting:before {
+    content: "\f109";		
+}
+
+.aprova-landing:before {
+    content: "\e900";
+}
+.aprova-bar-chart:before {
+    content: "\e901";
+}
+.aprova-website:before {
+    content: "\e902";
+}
+.aprova-objective:before {
+    content: "\e903";
+}
+.aprova-lightbulb:before {
+    content: "\e904";
+}
+.aprova-analysis:before {
+    content: "\e905";
+}
+.aprova-startup1:before {
+    content: "\e906";
+}
+.aprova-website-1:before {
+    content: "\e907";
+}
+.aprova-profits:before {
+    content: "\e908";
+}
+.aprova-research:before {
+    content: "\e909";
+}
+.aprova-analysis-1:before {
+    content: "\e90a";
+}
+.aprova-doctor1:before {
+    content: "\e90b";
+}
+.aprova-research-1:before {
+    content: "\e90c";
+}
+.aprova-team:before {
+    content: "\e90d";
+}
+.aprova-vaccine:before {
+    content: "\e90e";
+}
+.aprova-medicine:before {
+    content: "\e90f";
+}
+.aprova-drug:before {
+    content: "\e910";
+}
+.aprova-dose:before {
+    content: "\e911";
+}
+.aprova-prize:before {
+    content: "\e912";
+}
+.aprova-reward:before {
+    content: "\e913";
+}
+.aprova-plaster:before {
+    content: "\e914";
+}
+.aprova-medicine1:before {
+    content: "\e915";
+}
+.aprova-chemical:before {
+    content: "\e916";
+}
+.aprova-medicine-1:before {
+    content: "\e917";
+}
+.aprova-doctor:before {
+    content: "\e918";
+}
+.aprova-data:before {
+    content: "\e919";
+}
+.aprova-brain:before {
+    content: "\e91a";
+}
+.aprova-lung:before {
+    content: "\e91b";
+}
+.aprova-kidney:before {
+    content: "\e91c";
+}
+.aprova-mri:before {
+    content: "\e91d";
+}
+.aprova-trophy:before {
+    content: "\e91e";
+}
+.aprova-envelope-with-a-letter:before {
+    content: "\e91f";
+}
+.aprova-verified-text-paper:before {
+    content: "\e920";
+}
+.aprova-calculator-interface-symbol:before {
+    content: "\e921";
+}
+.aprova-clock:before {
+    content: "\e922";
+}
+.aprova-class-with-students-and-whiteboard:before {
+    content: "\e923";
+}
+.aprova-target1:before {
+    content: "\e924";
+}
+.aprova-worldwide:before {
+    content: "\e925";
+}
+.aprova-award:before {
+    content: "\e926";
+}
+.aprova-map:before {
+    content: "\e927";
+}
+.aprova-roof:before {
+    content: "\e928";
+}
+.aprova-clock-1:before {
+    content: "\e929";
+}
+.aprova-wash:before {
+    content: "\e92a";
+}
+.aprova-dinner:before {
+    content: "\e92b";
+}
+.aprova-food:before {
+    content: "\e92c";
+}
+.aprova-shower:before {
+    content: "\e92d";
+}
+.aprova-frying-pan-cooking:before {
+    content: "\e92e";
+}
+.aprova-music:before {
+    content: "\e92f";
+}
+.aprova-fan:before {
+    content: "\e930";
+}
+.aprova-screen:before {
+    content: "\e931";
+}
+.aprova-digital-marketing:before {
+    content: "\e932";
+}
+.aprova-startup:before {
+    content: "\e933";
+}
+.aprova-prize-1:before {
+    content: "\e934";
+}
+.aprova-circular:before {
+    content: "\e935";
+}
+.aprova-computer:before {
+    content: "\e936";
+}
+.aprova-research1:before {
+    content: "\e937";
+}
+.aprova-analytics:before {
+    content: "\e938";
+}
+.aprova-bitcoin:before {
+    content: "\e939";
+}
+.aprova-talk:before {
+    content: "\e93a";
+}
+.aprova-bitcoin-1:before {
+    content: "\e93b";
+}
+.aprova-bitcoin-2:before {
+    content: "\e93c";
+}
+.aprova-bitcoin-3:before {
+    content: "\e93d";
+}
+.aprova-bitcoin-4:before {
+    content: "\e93e";
+}
+.aprova-bitcoin-5:before {
+    content: "\e93f";
+}
+.aprova-bitcoin-6:before {
+    content: "\e940";
+}
+.aprova-password:before {
+    content: "\e941";
+}
+.aprova-bitcoin-7:before {
+    content: "\e942";
+}
+.aprova-blockchain:before {
+    content: "\e943";
+}
+.aprova-ui:before {
+    content: "\e944";
+}
+.aprova-shaver:before {
+    content: "\e945";
+}
+.aprova-shave:before {
+    content: "\e946";
+}
+.aprova-chair:before {
+    content: "\e947";
+}
+.aprova-woman:before {
+    content: "\e948";
+}
+.aprova-gym:before {
+    content: "\e949";
+}
+.aprova-down:before {
+    content: "\e94a";
+}
+.aprova-earth-grid-symbol-and-three-persons:before {
+    content: "\e94b";
+}
+.aprova-weightlifting:before {
+    content: "\e94c";
+}
+.aprova-partner:before {
+    content: "\e94d";
+}
+.aprova-city-hall:before {
+    content: "\e94e";
+}
+.aprova-shake-hands:before {
+    content: "\e94f";
+}
+.aprova-avatar:before {
+    content: "\e950";
+}
+.aprova-target:before {
+    content: "\e951";
+}
+.aprova-contract:before {
+    content: "\e952";
+}
+.aprova-investment:before {
+    content: "\e953";
+}
+.flaticon-arrows:before {
+    content: "\f100";
+}
+
+/**====================================
+/Flaticon 
+======================================**/
+/*
+@font-face {
+    font-family: "Flaticon";
+    src: url("../fonts/Flaticon.eot");
+    src: url("../fonts/Flaticond41d.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Flaticon.woff") format("woff"),
+        url("../fonts/Flaticon.ttf") format("truetype"),
+        url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: "Flaticon";
+        src: url("../fonts/Flaticon.svg#Flaticon") format("svg");
+    }
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+    font-family: Flaticon;
+    font-style: normal;
+    line-height: inherit;
+    font-size: inherit;
+}
+*/

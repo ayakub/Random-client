@@ -1,0 +1,148 @@
+
+
+.elementor-widget-witr_section_Shape.elementor-widget:not(:last-child) {
+    margin-bottom: 0px;
+}
+.witr_shape_item_inner {
+    position: absolute;
+    left: 0;
+    /* text-align: center; */
+    top: 0px;
+    /* margin: auto; */
+    z-index: -1;
+    content: "";
+	transition:.5s;	
+	
+}
+.witr_shape_box {
+    width: 300px;
+    height: 300px;
+    background: #ddd;
+    border-radius: 50%;
+    border: 54px solid #f9f9f9;
+    margin: auto;
+    transition: .5s;
+}
+.witr_shape_box_text{
+	text-align: center;
+    left: 50%;
+    top: 50%;
+    margin: auto;
+    text-align: center;
+    position: absolute;
+    content: "";
+    transform: translateX(-50%) translateY(-50%);
+	font-size:18px;
+	color:#333;	
+}
+/* translate lr */
+@keyframes witr_movelr_box45 {
+  0%{
+	  transform: translateX(0px);
+	}
+  100%{
+	  transform: translateX(45px);
+	}
+}
+@keyframes witr_movelr_box90 {
+  0%{
+	  transform: translateX(0px);
+	}
+  100%{
+	  transform: translateX(90px);
+	}
+}
+@keyframes witr_movelr_box180 {
+  0%{
+	  transform: translateX(0px);
+	}
+  100%{
+	  transform: translateX(180px);
+	}
+}
+@keyframes witr_movelr_box360 {
+  0%{
+	  transform: translateX(0px);
+	}
+  100%{
+	  transform: translateX(360px);
+	}
+}
+/* translate tb */
+@keyframes witr_movetb_box45 {
+  0%{
+	  transform: translateY(0px);
+	}
+  100%{
+	  transform: translateY(45px);
+	}
+}
+@keyframes witr_movetb_box90 {
+  0%{
+	  transform: translateY(0px);
+	}
+  100%{
+	  transform: translateY(90px);
+	}
+}
+@keyframes witr_movetb_box180 {
+  0%{
+	  transform: translateY(0px);
+	}
+  100%{
+	  transform: translateY(180px);
+	}
+}
+@keyframes witr_movetb_box360{
+  0%{
+	  transform: translateY(0px);
+	}
+  100%{
+	  transform: translateY(360px);
+	}
+}
+
+
+/* rotate */
+@keyframes witr_rotate_360 {
+  0%{
+	  transform: rotate(0deg);
+	}
+  100%{
+	  transform: rotate(360deg);
+	}
+}
+@keyframes witr_rotate_180 {
+  0%{
+	  transform: rotate(0deg);
+	}
+  100%{
+	  transform: rotate(180deg);
+	}
+}
+@keyframes witr_rotate_90 {
+  0%{
+	  transform: rotate(0deg);
+	}
+  100%{
+	  transform: rotate(90deg);
+	}
+}
+@keyframes witr_rotate_45 {
+  0%{
+	  transform: rotate(0deg);
+	}
+  100%{
+	  transform: rotate(45deg);
+	}
+}
+
+/* another shape*/
+.wirt_ani_slick_image {
+    position: absolute;
+    right: -15%;
+    top: -52%;
+	animation: rotateIn 20s linear infinite;
+}
+
+

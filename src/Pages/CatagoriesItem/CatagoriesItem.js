@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Contex/AuthProvidor";
 import Catagory from "./Catagory";
 import Modal from "./Modal";
+import "../Home/Home/cardBackground.css";
 
 const CatagoriesItem = () => {
   const [allusers, setAlluser] = useState({});
@@ -15,7 +16,7 @@ const CatagoriesItem = () => {
   const catagoryitems = useLoaderData();
   return (
     <div>
-      <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 my-20">
+      <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-2 py-20 background-color">
         {catagoryitems?.map((items) => (
           <Catagory
             key={items._id}

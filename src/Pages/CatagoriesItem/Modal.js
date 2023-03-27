@@ -7,9 +7,10 @@ import { AuthContext } from "../../Contex/AuthProvidor";
 const Modal = () => {
   const { user, modalData } = useContext(AuthContext);
   const { model, resalePrice, catagory, image } = modalData;
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   const handleModal = (data) => {
     handleSubmit("");
+
     console.log(data);
     const modalBookingItem = {
       username: data.name,
@@ -35,6 +36,7 @@ const Modal = () => {
           swal("Item booked");
         }
       });
+    reset();
   };
   return (
     <>
@@ -56,7 +58,7 @@ const Modal = () => {
               </label>
               <input
                 type="text"
-                defaultValue={user?.displayName}
+                value={user?.displayName}
                 readOnly
                 {...register("name", {
                   required: "Name is Required",
@@ -72,7 +74,7 @@ const Modal = () => {
               </label>
               <input
                 type="email"
-                defaultValue={user?.email}
+                value={user?.email}
                 readOnly
                 {...register("email", {
                   required: "Name is Required",
@@ -88,7 +90,7 @@ const Modal = () => {
               </label>
               <input
                 type="text"
-                defaultValue={image}
+                value={image}
                 readOnly
                 {...register("image", {
                   required: "image is Required",
@@ -104,7 +106,7 @@ const Modal = () => {
               </label>
               <input
                 type="text"
-                defaultValue={catagory}
+                value={catagory}
                 readOnly
                 {...register("catagory", {
                   required: "Name is Required",
@@ -120,7 +122,7 @@ const Modal = () => {
               </label>
               <input
                 type="text"
-                placeholder={model}
+                value={model}
                 readOnly
                 {...register("item", {
                   required: "Name is Required",
@@ -136,7 +138,7 @@ const Modal = () => {
               </label>
               <input
                 type="text"
-                defaultValue={resalePrice}
+                value={resalePrice}
                 readOnly
                 {...register("price", {
                   required: "Name is Required",

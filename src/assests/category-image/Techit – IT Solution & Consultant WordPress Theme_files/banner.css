@@ -1,0 +1,186 @@
+/*===========================
+    3.banner css 
+===========================*/
+.banner_area {
+	position:relative;
+	height:800px;
+}
+.banner_area_inner {
+
+}
+.banner-content {
+	position:absolute;
+	top:50%;
+}
+.banner-content h1,
+.banner-content h2,
+.banner-content h3{
+    color: #333;
+    font-size: 50px;
+
+}
+.banner-content h1 span,
+.banner-content h2 span,
+.banner-content h3 span{
+   color: #4900dd;	
+}
+.banner-content p {
+    color: #333;
+    margin-top: 22px;
+    margin-bottom: 36px;
+}
+.text-center.banner-content h1, 
+.text-center.banner-content h2, 
+.text-center.banner-content h3, 
+.text-center.banner-content p{
+	margin-left:auto;
+	margin-right:auto;
+} 
+.banner-content a {}
+.banner-content a i {
+    color: #fff;
+    background: #4900dd ;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-left: 9px;
+    font-size: 20px;
+}
+/*button css*/
+.witr_btns2{}
+.butn {
+    background: transparent;
+    border: 2px solid #4900dd;
+    position: relative;
+    vertical-align: middle;
+    transition: .5s;
+    outline: none;
+    border-radius: 30px;
+    color: #4900dd;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    z-index: 2;
+    padding: 10px 30px;
+	overflow: hidden;
+	margin-right:5px;
+}
+.butn:hover {
+    color: #fff;
+}
+.witr_float .butn,
+.witr_float .butn {
+    float: left;
+}
+.butn::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    background: #4900dd ;
+    position: absolute;
+    left: 0;
+    top: 0;
+	z-index:-1;
+    border-radius: 30px;
+    transition: .5s;
+}
+.butn:hover::before {
+    width: 100%;	
+}
+.witr_deshboard{
+	position: relative;
+	top:50%;
+    text-align: right;	
+}
+.witr_deshboard img{}
+/*====== style 3 ======*/
+
+.banner-content ul{
+/*     margin-top: 38px; */
+}
+.banner-content.content-3 ul li {
+    display: inline-block;
+}
+.banner-content.content-3 ul li a {
+    margin-top: 0;
+    padding: 0 12px;
+}
+.banner-content.content-3 ul li a i {
+    background-color: transparent;
+    color: #333;
+    font-size: 17px;
+    height: 0;
+    width: 0;
+    margin: 0;
+}
+
+/*====== style 4 ======*/
+.banner-content.content-4 ul li {
+    display: inline-block;
+}
+.banner-content.content-4 ul li a i {
+    background-color: transparent;
+    color: #4900dd ;
+    border: 1px solid #4900dd ;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 17px;
+    margin-right: 0;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.banner-content.content-4 ul li a:hover i {
+    background: #4900dd ;
+    color: #fff;
+}
+
+/*====== style 5 ======*/
+.banner-content form{
+    position: relative;
+    width: 445px;   
+}
+.banner-content input{
+    background-color: transparent;
+    color: #4900dd ;
+    border: 1px solid #4900dd ;
+    height: 50px;
+    width: 445px;
+    padding-left: 30px;
+    border-radius: 30px;
+}
+.banner-content input::-webkit-input-placeholder{
+    color: #4900dd ;
+    opacity: 1;  
+}
+.banner-content input:-ms-input-placeholder{
+    color: #4900dd ;
+    opacity: 1;  
+}
+.banner-content input::-moz-placeholder{
+    color: #4900dd ;
+    opacity: 1; 
+}
+.banner-content button {
+	position: absolute;
+	right: 0px;
+	bottom: 0;
+	background: #4900dd ;
+	border: 0;
+	height: 50px;
+	padding: 14px 35px;
+	border-radius: 30px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+	line-height: 0px;    
+}
+
+
+
+
+
+
